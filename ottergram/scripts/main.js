@@ -5,11 +5,6 @@ var THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]';
 var HIDDEN_DETAIL_CLASS = 'hidden-detail';
 var TINY_EFFECT_CLASS = 'is-tiny';
 var ESC_KEY = 27;
-var ONE_KEY = 49;
-var TWO_KEY = 50;
-var THREE_KEY = 51;
-var FOUR_KEY = 52;
-var FIVE_KEY = 53;
 
 function setDetails(imageUrl, titleText) {
     'use strict';
@@ -71,31 +66,15 @@ function showDetails() {
     }, 50);
 }
 
-function addKeyPressHandler(thumbnails) {
+function addKeyPressHandler() {
     'use strict';
     document.body.addEventListener('keyup', function (event) {
         event.preventDefault();
-        switch (event.keyCode) {
-        case ONE_KEY:
-            setAndShowDetails(thumbnails[0]);
-            break;
-        case TWO_KEY:
-            setAndShowDetails(thumbnails[1]);
-            break;
-        case THREE_KEY:
-            setAndShowDetails(thumbnails[2]);
-            break;
-        case FOUR_KEY:
-            setAndShowDetails(thumbnails[3]);
-            break;
-        case FIVE_KEY:
-            setAndShowDetails(thumbnails[4]);
-            break;
-        case ESC_KEY:
+        if (event.keyCode == ESC_KEY) {
             hideDetails();
-            break;
-        default:
-            break;
+        }
+        if ((event.keyCode >= 49) && (event.keyCode <= 53)) {
+            setDetailsFromThumb(getThumbnailsArray()[event.keyCode - 49]);
         }
     });
 }
