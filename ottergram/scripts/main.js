@@ -5,6 +5,8 @@ var THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]';
 var HIDDEN_DETAIL_CLASS = 'hidden-detail';
 var TINY_EFFECT_CLASS = 'is-tiny';
 var ESC_KEY = 27;
+var ONE_KEY = 49
+var FIVE_KEY = 54
 
 function setDetails(imageUrl, titleText) {
     'use strict';
@@ -73,7 +75,7 @@ function addKeyPressHandler() {
         if (event.keyCode == ESC_KEY) {
             hideDetails();
         }
-        if ((event.keyCode >= 49) && (event.keyCode <= 53)) {
+        if ((event.keyCode >= ONE_KEY) && (event.keyCode <= FIVE_KEY)) {
             setDetailsFromThumb(getThumbnailsArray()[event.keyCode - 49]);
         }
     });
