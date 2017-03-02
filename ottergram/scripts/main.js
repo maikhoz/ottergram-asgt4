@@ -77,6 +77,7 @@ function addKeyPressHandler() {
         }
         if ((event.keyCode >= ONE_KEY) && (event.keyCode <= NINE_KEY)) {
             setDetailsFromThumb(getThumbnailsArray()[event.keyCode - 49]);
+            showDetails();
         }
     });
 }
