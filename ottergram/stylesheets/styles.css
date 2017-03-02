@@ -64,7 +64,6 @@ a {
     max-width: 120px;
     border: 1px solid rgb(100%, 100%, 100%);
     border: 1px solid rgba(100%, 100%, 100%, 0.8);
-
     transition: transform 133ms ease-in-out;
 }
 
@@ -96,13 +95,12 @@ a {
 .detail-image-frame {
     position: relative;
     text-align: center;
-
-    transition: transform 333ms cubic-bezier(.94,.07,.92,.91);
+    transition: transform 333ms cubic-bezier(.94, .07, .92, .91);
 }
 
 .is-tiny {
-  transform: scale(0.001);
-  transition: transform 0ms;
+    transform: scale(0.001);
+    transition: transform 0ms;
 }
 
 .detail-image {
@@ -120,16 +118,16 @@ a {
 }
 
 .hidden-detail .detail-image-container {
-  display: none;
+    display: none;
 }
 
 .hidden-detail .thumbnail-list {
-  flex-direction: column;
-  align-items: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hidden-detail .thumbnail-item {
-  max-width: 80%;
+    max-width: 80%;
 }
 
 @media all and (min-width: 768px) {
@@ -141,7 +139,6 @@ a {
         flex-direction: column;
         order: 0;
         margin-left: 20px;
-
         padding: 0 35px;
     }
     .thumbnail-item {

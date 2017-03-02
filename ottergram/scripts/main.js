@@ -70,14 +70,16 @@ function showDetails() {
 
 function addKeyPressHandler() {
     'use strict';
-    document.body.addEventListener('keyup', function (event) {
+    document.body.addEventListener('keyup', function(event) {
         event.preventDefault();
         if (event.keyCode == ESC_KEY) {
             hideDetails();
         }
         if ((event.keyCode >= ONE_KEY) && (event.keyCode <= NINE_KEY)) {
-            setDetailsFromThumb(getThumbnailsArray()[event.keyCode - 49]);
-            showDetails();
+            if (getThumbnailsArray()[event.keyCode - 49]) {
+                setDetailsFromThumb(getThumbnailsArray()[event.keyCode - 49]);
+                showDetails();
+            }
         }
     });
 }
